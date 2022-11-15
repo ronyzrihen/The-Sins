@@ -12,41 +12,47 @@ Job::Job(char* title_t)
 	if (strcmp(title, "policeman") == 0)
 	{
 		title = strcpy(title, title_t);
-		salary = 10, 000;
+		salary = 100;
 		dailyworkhours = 8;
 		return;
 	}
 	if (strcmp(title, "fireman") == 0)
 	{
 		title = strcpy(title, title_t);
-		salary = 12,000;
+		salary = 120;
 		dailyworkhours = 10;
 		return;
 	}
 	if (strcmp(title, "footballer") == 0)
 	{
 		title = strcpy(title, title_t);
-		salary = 15,000;
+		salary = 150;
 		dailyworkhours = 8;
 		return;
 	}
 	if (strcmp(title, "actor") == 0)
 	{
-		title = strcpy(title, title_t);
-		salary = 8,000;
+		strcpy(title, title_t);
+		salary = 800;
 		dailyworkhours = 7;
 		return;
 	}
 	if (strcmp(title, "teacher") == 0)
 	{
-		title = strcpy(title, title_t);
-		salary = 7,000;
+		strcpy(title, title_t);
+		salary = 700;
 		dailyworkhours = 8;
 		return;
 	}
 	cout << "not exist";
 	return;
 
+}
+
+void Job::gotowork(Person& person) {
+	person.set_money(salary);
+	
+	
 }
 
 Job::~Job()

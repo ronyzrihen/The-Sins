@@ -5,11 +5,13 @@
 class Energy
 {
 private:
-	int level;
+	int E_level;
 
 public:
-	Energy();
-	~Energy();
+	Energy()  { E_level = 10; };
+	~Energy() {};
 	void sleep();
+	int get_Elevel() { return E_level; };
+	void set_Elevel(int num = -1);
 };
 

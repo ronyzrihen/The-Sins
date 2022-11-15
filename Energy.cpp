@@ -3,15 +3,24 @@
 
 using namespace std;
 
-Energy::Energy()
-{
-	level = 10;
-	return;
-}
-
 void Energy::sleep()
 {
-	level = +5;
+	if (E_level + 5 > 10) {
+		E_level = 10;
+		return;
+	}
+	E_level += 5;
 }
 
-Energy::~Energy() {};
+void Energy::set_Elevel(int num = -1) {
+
+	if (E_level + num <= 3) {
+		cout << "I need to sleep!\n";
+		cout << "your Energy level is: " << E_level;
+	}
+	if (E_level + num <= 0) {
+		E_level = 0;
+		return;
+	}
+	E_level += num;
+}

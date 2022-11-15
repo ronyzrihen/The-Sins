@@ -17,5 +17,5 @@ Animal::~Animal()
 
 void Animal::eat(Food food)
 {
-	
+
 }

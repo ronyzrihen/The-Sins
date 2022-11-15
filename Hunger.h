@@ -5,18 +5,11 @@
 class Hunger
 {
 public:
-	Hunger();
-	~Hunger();
-	void eat(Food food);
-
+	Hunger() { H_level = 10; };
+	~Hunger(){};
+	void eat(Food* fridge);
+	int get_Hlevel();
 private:
-	int level;
+	int H_level;
 };
 
-Hunger::Hunger()
-{
-}
-
-Hunger::~Hunger()
-{
-}

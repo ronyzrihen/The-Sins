@@ -1,12 +1,14 @@
 #pragma once
 #include <iostream>
+#include "Needs.h"
 
 class Job
 {
 public:
 	Job(char* title_t);
 	~Job();
-	void gotowork();
+	void gotowork(Person& person);
+	
 
 private:
 	char* title;

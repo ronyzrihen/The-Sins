@@ -13,17 +13,19 @@ public:
 	Needs();
 	~Needs();
 
+	int get_Bladder();
+	int get_Hunger();
+	int get_Energy();
+	int get_Social();
+
+
+
 private:
-	Bladder bladder;
-	Hunger hunger;
-	Energy energy;
-	Social social;
+	Bladder N_bladder;
+	Hunger N_hunger;
+	Energy N_energy;
+	Social N_social;
+	
 };
 
-Needs::Needs()
-{
-}
 
-Needs::~Needs()
-{
-}
