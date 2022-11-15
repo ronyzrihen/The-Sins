@@ -18,6 +18,6 @@ void Bladder::set_Blevel(int num = -1) {
 		B_level = 0;
 		return;
 	}
-	B_level += Num;
+	B_level += Numasdfsdf
 }
 

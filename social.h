@@ -10,7 +10,7 @@ public:
 	void talk(Person person);
 	void text(Person person);
 	void phonecall(Person person);
-
+	int get_social();
 private:
 	int level;
 };

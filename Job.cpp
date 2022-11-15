@@ -1,6 +1,14 @@
 #include "Job.h"
 #include <string.h>
 using namespace std;
+Job::Job(){
+
+title = new char [11];
+strcpy(title,"unemployed");
+salary = 0;
+dailyworkhours = 0;
+
+}
 Job::Job(char* title_t)
 {
 	if (title == NULL )

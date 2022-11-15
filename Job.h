@@ -5,6 +5,7 @@
 class Job
 {
 public:
+	Job();
 	Job(char* title_t);
 	~Job();
 	void gotowork(Person& person);

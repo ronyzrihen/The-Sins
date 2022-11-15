@@ -1,25 +1,25 @@
 #pragma once
 #include <iostream>
 #include "Animal.h"
-
+inline void action(int level) {
+		if (level + 5 > 10) { 
+		level = 10;
+		return;
+	}
+	level += 5;
+}
 class Fun
 {
 public:
-	Fun();
-	~Fun();
-	void dance();
-	void playguitar();
-	void playcomputer();
+	Fun()				{ F_level = 10; };
+	~Fun()				{};
+	void dance()		{ action(F_level); };
+	void playguitar()	{ action(); };
+	void playcomputer() { action; };
 	void petanimal(	Animal animal);
 
 private:
-	int level;
+	int F_level;
 };
 
-Fun::Fun()
-{
-}
 
-Fun::~Fun()
-{
-}

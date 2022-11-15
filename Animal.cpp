@@ -15,7 +15,7 @@ Animal::~Animal()
 	delete[] A_kind;
 }
 
-void Animal::eat(Food food)
+void Animal::eat()
 {
 
 }

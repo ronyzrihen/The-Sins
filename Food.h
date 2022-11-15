@@ -14,8 +14,8 @@ public:
 	~Food() { delete[] F_name; };
 
 public:
-	void cook_food();
-	const char* get_name() ;
+	void cook_food()		{F_cooked = True; };
+	const char* get_name()  { return F_name; };
 	void  print_name()		{ cout << F_name; };
 	int	  get_worth() const { return F_worth; };
 private:

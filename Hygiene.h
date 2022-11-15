@@ -1,13 +1,13 @@
 #pragma once
 #include <iostream>
-
+using namespace std;
 class Hygiene
 {
 private:
 	int H_level;
 
 public:
-	Hygiene()  {H_level = 10};
+	Hygiene()  {H_level = 10;};
 	~Hygiene() {};
 	void shower();
 	int get_Hygiene() { return H_level; };

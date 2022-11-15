@@ -7,10 +7,11 @@ class Animal
 private:
 	char* A_name;
 	char* A_kind;
+	
 
 public:
 	Animal(char* name, char* kind);
 	~Animal();
-	void eat(Food food);
+	void eat();
 };
 

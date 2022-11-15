@@ -19,6 +19,6 @@ void Hygiene::set_Hygiene(int num = -1) {
 		H_level = 0;
 		return;
 	}
-	H_level += Num;
+	H_level += num;
 
 }
