@@ -1,11 +1,11 @@
 #include "Person.h"
 using namespace std;
-void create_character(Person& house);
-
+Person* create_character(Person* house, int& size);
 
 int main() {
 
-	Person* house = new Person[10];
+	Person* house = NULL;
+	int house_size = 0;
 	int choice = 0;
 
 	for (;;) {
@@ -50,3 +50,20 @@ int main() {
 	return 0;
 }
 
+Person* create_character(Person* house, int& size) {
+	char* first_name = new char [];
+	char* last_name = new char[];
+	cout << "Choose Caracter First Name: ";
+	cin >> first_name;
+	cout << "Choose Character Last Name: ";
+	cin >> last_name;
+
+	if (house == NULL) {
+
+		house = new Person[++size];
+
+
+	}
+
+
+}

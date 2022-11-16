@@ -7,11 +7,11 @@ class Person
 {
 public:
 	Person();
-	Person(char*name,char*lastname,int id, char* job_name);
+	Person(char* name,char* lastname,int id, char* job_name);
 	~Person();
 	int get_money() {return P_money; };
 	void set_money(int salary) { P_money += salary; };
-	
+	const char* get_name() { return P_FirstName; };
 private:
 	int ID;
 	char* P_FirstName;

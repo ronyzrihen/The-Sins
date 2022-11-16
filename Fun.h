@@ -14,8 +14,8 @@ public:
 	Fun()				{ F_level = 10; };
 	~Fun()				{};
 	void dance()		{ action(F_level); };
-	void playguitar()	{ action(); };
-	void playcomputer() { action; };
+	void playguitar()	{ action(F_level); };
+	void playcomputer() { action(F_level); };
 	void petanimal(	Animal animal);
 
 private:

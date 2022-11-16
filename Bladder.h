@@ -11,5 +11,7 @@ public:
 	void set_Blevel(int num = -1);
 private:
 	int B_level;
+	
+
 };
 
