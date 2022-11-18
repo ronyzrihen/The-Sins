@@ -1,6 +1,6 @@
 #include "Hunger.h"
 char apple[] = "Apple", banana[] = "Banana", pizza[] = "Pizza", pasta[] = "Pasta", meat[] = "Meat", chicken[] = "Chicken";
-Food fridge[MAX_FRIDGE] = { Food (apple) , Food(banana, False, 3), Food(pizza), Food(pasta, True), Food(meat, True,6), Food(chicken, True) };
+Food fridge[MAX_FRIDGE] = { Food(apple) , Food(banana, False, 3), Food(pizza), Food(pasta, True), Food(meat, True,6), Food(chicken, True) };
  
 void Hunger::eat() {
 	 int choice = 0;
@@ -23,7 +23,7 @@ void Hunger::eat() {
 	 H_level += fridge[choice].get_worth();
 }
 
- void Hunger::set_Hunger(int num = -1) {
+ void Hunger::set_Hunger(int num) {
 
 	 if (H_level + num <= 3) {
 		 cout << "I need to eat!\n";

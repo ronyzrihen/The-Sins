@@ -12,6 +12,6 @@ public:
 	~Energy() {};
 	void sleep();
 	int get_Elevel() { return E_level; };
-	void set_Elevel(int num = -1);
+	void set_Elevel(int num);
 };
 

@@ -9,7 +9,7 @@ void Hygiene::shower() {
 		H_level += 5;
 }
 
-void Hygiene::set_Hygiene(int num = -1) {
+void Hygiene::set_Hygiene(int num ) {
 
 	if (H_level + num <= 3) {
 		cout << "I need to sower!\n";

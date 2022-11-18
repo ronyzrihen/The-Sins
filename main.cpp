@@ -1,10 +1,12 @@
-#include "Person.h"
+#include "Person.hpp"
 using namespace std;
-Person* create_character(Person* house, int& size);
+void create_character(Person* house);
+char Job1[] = "Policeman", j2[] = "Fireman", j3[] = "Footballer", j4[] = "Actor", j5[] = "Teacher", j6[] = "Criminal";
+Job jobs[] = { Job(Job1),Job(j2),Job(j3),Job(j4) ,Job(j5) ,Job(j6) };
 
 int main() {
 
-	Person* house = NULL;
+	Person house[10];
 	int house_size = 0;
 	int choice = 0;
 
@@ -22,7 +24,7 @@ int main() {
 
 	switch (choice) {
 	case 1: {
-		
+		 create_character(house);
 		break;
 	}
 	case 2: {
@@ -50,20 +52,34 @@ int main() {
 	return 0;
 }
 
-Person* create_character(Person* house, int& size) {
-	char* first_name = new char [];
-	char* last_name = new char[];
-	cout << "Choose Caracter First Name: ";
-	cin >> first_name;
-	cout << "Choose Character Last Name: ";
-	cin >> last_name;
+void create_character(Person* house) {
+	char* first_name = new char;
+	char* last_name = new char;
+	int choice = -1;
+	for (int i = 0; i < 10; i++) {
+		if (house[i].get_ID() != -1) {
+			continue;
+		}
+			house[i].set_ID(i);
+			cout << "Choose Caracter First Name: ";
+			cin >> first_name;
+			cout << "Choose Character Last Name: ";
+			cin >> last_name;
+			cout << "Job options:\n";
+			for (int j = 0; j < 6; j++) {
+				cout << i << " - " << jobs[j].get_Name() << endl
+					<< "   Salary - " << jobs[j].get_Salary() << endl
+					<< "   Work Hours - " << jobs[j].get_Hours() << endl << endl;
+			}
+			 cout << "Choose Job: ";
+			 cin >> choice;
 
-	if (house == NULL) {
-
-		house = new Person[++size];
-
-
+			 house[i].set_Job(jobs[choice]);
+			 cout << "Character created!\n";
+			 break;
 	}
+
+	
 
 
 }

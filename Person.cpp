@@ -1,16 +1,23 @@
-#include "Person.h"
-using namespace std;
+#include "Person.hpp"
 
 
-Person::Person(): job(), needs(){
 
+Person::Person()
+	:
+	P_job(), 
+	needs()
+{
+
+ID = -1;
 P_FirstName = NULL;
 P_LastName = NULL;
 P_money = 20000;
-ID = -1;
 
 }
-Person::Person(char* name, char* lastname, int id, char* job_name) : job(job_name), ID(id)
+Person::Person(char* name, char* lastname, int id, char* job_name) 
+	:
+	P_job(job_name), 
+	ID(id)
 {
 	if (name == NULL||lastname==NULL)
 	{
@@ -31,4 +38,11 @@ Person::~Person()
 {
 	delete[] P_FirstName;
 	delete[] P_LastName;
+}
+
+void Person::set_Job(Job job) {
+
+	P_job.set_title(job.get_Name());
+	P_job.set_salary(job.get_Salary());
+	P_job.set_work_hours(job.get_Hours());
 }

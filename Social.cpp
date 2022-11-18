@@ -1,9 +1,5 @@
-#include "social.h"
+#include "social.hpp"
 
-Social::Social()
-{
-	level = 10;
-}
 
 void Social::talk(Person person)
 {

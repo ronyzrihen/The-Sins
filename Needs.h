@@ -4,7 +4,7 @@
 #include "Hunger.h"
 #include "Energy.h"
 #include "Fun.h"
-#include "social.h"
+#include "social.hpp"
 
 
 class Needs
