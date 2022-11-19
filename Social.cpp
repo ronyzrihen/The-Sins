@@ -1,5 +1,5 @@
-#include "social.hpp"
-
+#include "Social.hpp"
+#include "Person.hpp"
 
 void Social::talk(Person person)
 {

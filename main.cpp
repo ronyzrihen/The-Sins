@@ -1,10 +1,16 @@
 #include "Person.hpp"
 using namespace std;
-void create_character(Person* house);
+
 char Job1[] = "Policeman", j2[] = "Fireman", j3[] = "Footballer", j4[] = "Actor", j5[] = "Teacher", j6[] = "Criminal";
 Job jobs[] = { Job(Job1),Job(j2),Job(j3),Job(j4) ,Job(j5) ,Job(j6) };
 
+void print_house(Person* house);
+void create_character(Person* house);
+
 int main() {
+
+
+	//cout << "here!";
 
 	Person house[10];
 	int house_size = 0;
@@ -35,6 +41,10 @@ int main() {
 
 		break;
 	}
+		case 4: {
+			print_house(house);
+		break;
+	}
 	case 0: {
 
 		break;
@@ -63,11 +73,15 @@ void create_character(Person* house) {
 			house[i].set_ID(i);
 			cout << "Choose Caracter First Name: ";
 			cin >> first_name;
+			house[i].set_Fname(first_name);
+		
 			cout << "Choose Character Last Name: ";
 			cin >> last_name;
+			house[i].set_Lname(last_name);
+
 			cout << "Job options:\n";
 			for (int j = 0; j < 6; j++) {
-				cout << i << " - " << jobs[j].get_Name() << endl
+				cout << j << " - " << jobs[j].get_Name() << endl
 					<< "   Salary - " << jobs[j].get_Salary() << endl
 					<< "   Work Hours - " << jobs[j].get_Hours() << endl << endl;
 			}
@@ -78,8 +92,17 @@ void create_character(Person* house) {
 			 cout << "Character created!\n";
 			 break;
 	}
+} // create character
 
-	
+	void print_house(Person* house){
+
+		for (int i =0 ; i < 10 ; i++){
+			if(house[i].get_ID() != -1){
+				cout << " - " << house[i].get_Fname() << " " << house[i].get_Lname() << endl;
+			}
+				
+		}
 
 
-}
+	} // print house
+

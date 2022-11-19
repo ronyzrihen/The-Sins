@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include <string.h>
+#include <cstring>
 #include "Food.h"
 class Animal
 {
@@ -10,8 +10,14 @@ private:
 	
 
 public:
+	Animal();
 	Animal(char* name, char* kind);
 	~Animal();
+	char* get_name() const { return A_name; };
+	char* get_kind() const { return A_kind; };
+	
+	void set_name(char* name);
+	void set_kind(char* kind);
 	void eat();
 };
 

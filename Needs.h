@@ -4,9 +4,9 @@
 #include "Hunger.h"
 #include "Energy.h"
 #include "Fun.h"
-#include "social.hpp"
+#include "Social.hpp"
 
-
+class Social;
 class Needs
 {
 public:

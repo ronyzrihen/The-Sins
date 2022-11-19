@@ -8,5 +8,10 @@
 	F_level += 5;
 }*/
 
+void Fun::petanimal(Animal animal) {
+
+	cout << "PET PET PET!\n";
+
+}
 
 

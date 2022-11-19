@@ -3,71 +3,76 @@
 using namespace std;
 Job::Job(){
 
-title = new char ;
+title = new char[11];
 strcpy(title,"unemployed");
 salary = 0;
 dailyworkhours = 0;
 
 }
 Job::Job(char* title_t)
+	:
+	title(NULL),
+	salary(0),
+	dailyworkhours(0)
 {
-	if (title == NULL )
+	int flag = 0;
+	if (title_t == NULL )
 	{
 		cout << "error";
 		return;
 	}
-	title = new char;
-	if (strcmp(title, "Policeman") == 0)
+
+	title = new char[sizeof(strlen(title_t)+1)];
+	if (strcmp(title_t, "Policeman") == 0)
 	{
 		title = strcpy(title, title_t);
 		salary = 100;
 		dailyworkhours = 8;
-		return;
+		flag++;
+		
 	}
-	if (strcmp(title, "Fireman") == 0)
+	if (strcmp(title_t, "Fireman") == 0)
 	{
 		title = strcpy(title, title_t);
 		salary = 120;
 		dailyworkhours = 10;
-		return;
+		flag++;
 	}
-	if (strcmp(title, "Footballer") == 0)
+	if (strcmp(title_t, "Footballer") == 0)
 	{
 		title = strcpy(title, title_t);
 		salary = 150;
 		dailyworkhours = 8;
-		return;
+		flag++;
 	}
-	if (strcmp(title, "Actor") == 0)
+	if (strcmp(title_t, "Actor") == 0)
 	{
 		strcpy(title, title_t);
 		salary = 800;
 		dailyworkhours = 7;
-		return;
+		flag++;
 	}
-	if (strcmp(title, "Teacher") == 0)
+	if (strcmp(title_t, "Teacher") == 0)
 	{
 		strcpy(title, title_t);
 		salary = 700;
 		dailyworkhours = 8;
-		return;
+		flag++;
 	}
-	if (strcmp(title, "Criminal") == 0)
+	if (strcmp(title_t, "Criminal") == 0)
 	{
 		strcpy(title, title_t);
 		salary = 900;
 		dailyworkhours = 5;
-		return;
+		flag++;
 	}
-	cout << "not exist";
-	return;
+		
+		if(flag == 0){
+			 cout << "not exist\n" ;
+		}
 
-}
+	
 
-
-
-void Job::gotowork() {
-	cout << "+" << salary << "$\n";
 }
 
 Job::~Job()
@@ -76,6 +81,12 @@ Job::~Job()
 	return;
 
 }
+
+
+void Job::gotowork() {
+	cout << "+" << salary << "$\n";
+}
+
 
 void Job::set_title(char* New_name) {
 	delete[] title;

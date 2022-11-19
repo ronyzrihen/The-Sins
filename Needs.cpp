@@ -1,7 +1,11 @@
 
 #include "Needs.h"
 
-Needs::Needs() : N_bladder(), N_hunger(), N_energy(), N_social()
+Needs::Needs() :
+	N_bladder(),
+	N_hunger(),
+	N_energy(),
+	N_social()
 {
 	
 }
