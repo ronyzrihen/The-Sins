@@ -17,6 +17,7 @@ public:
 	void playguitar()	{ action(F_level); };
 	void playcomputer() { action(F_level); };
 	void petanimal(	Animal animal);
+	void set_Fun(int num);
 
 private:
 	int F_level;

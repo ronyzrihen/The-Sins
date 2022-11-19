@@ -23,14 +23,20 @@ public:
 	void set_Job(Job job);
 	void set_Fname(char* name);
 	void set_Lname(char* name);
-
+	void set_needs(Needs needs){};
+	void set_p_Bladder(){P_needs.set_Bladder();};
+	void set_P_Hunger(){P_needs.set_Hunger();};
+	void set_P_Social(){};
+	void set_P_Fun(){P_needs.set_fun();};
+	void set_P_Energy(){P_needs.set_Energy();};
+	void set_p_Hygiene(){P_needs.set_Hygiene();};
  private:
 
 	int ID;
 	char* P_FirstName;
 	char* P_LastName;
 	int P_money;
-	Needs needs;
+	Needs P_needs;
 	Job P_job;
 
 };

@@ -6,14 +6,16 @@ class Person;
 class Social
 {
 public:
-	Social() { level = 10; };
+	Social() { S_level = 10; };
 	~Social();
 	void talk(Person person);
 	void text(Person person);
 	void phonecall(Person person);
-	int get_social() { return level; };
+	int get_social() { return S_level; };
+	void set_Slevel(int num );
+
 private:
-	int level;
+	int S_level;
 };
 
 

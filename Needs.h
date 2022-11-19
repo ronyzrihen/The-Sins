@@ -5,6 +5,7 @@
 #include "Energy.h"
 #include "Fun.h"
 #include "Social.hpp"
+#include "Hygiene.h"
 
 class Social;
 class Needs
@@ -17,6 +18,12 @@ public:
 	int get_Hunger();
 	int get_Energy();
 	int get_Social();
+	void set_Bladder();
+	void set_Hunger();
+	void set_Social();
+	void set_Energy();
+	void set_fun();
+	void set_Hygiene();
 
 
 
@@ -25,6 +32,8 @@ private:
 	Hunger N_hunger;
 	Energy N_energy;
 	Social N_social;
+	Fun N_fun;
+	Hygiene N_hygiene;
 	
 };
 

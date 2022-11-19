@@ -5,7 +5,7 @@
 Person::Person()
 	:
 	P_job(), 
-	needs()
+	P_needs()
 {
 
 ID = -1;
@@ -18,7 +18,7 @@ Person::Person(char* name, char* lastname, int id, char* job_name)
 	:
 	P_job(job_name),
 	ID(id),
-	needs(),
+	P_needs(),
 	P_money(20000),
 	P_FirstName(NULL),
 	P_LastName(NULL)

@@ -6,6 +6,8 @@ Job jobs[] = { Job(Job1),Job(j2),Job(j3),Job(j4) ,Job(j5) ,Job(j6) };
 
 void print_house(Person* house);
 void create_character(Person* house);
+void Delete_character(Person* house);
+void Action(Person* house);
 
 int main() {
 
@@ -35,11 +37,11 @@ int main() {
 		break;
 	}
 	case 2: {
-
+		Delete_character(house);
 		break;
 	}
 	case 3: {
-
+		Action(house);
 		break;
 	}
 		case 4: {
@@ -99,7 +101,7 @@ void create_character(Person* house) {
 
 		for (int i =0 ; i < 10 ; i++){
 			if(house[i].get_ID() != -1){
-				cout << " - " << house[i].get_Fname() << " " << house[i].get_Lname() << endl;
+				cout <<"ID:"<<house[i].get_ID()<<"\n"<< " - " << house[i].get_Fname() << " " << house[i].get_Lname() << endl;
 			}
 				
 		}
@@ -107,3 +109,79 @@ void create_character(Person* house) {
 
 	} // print house
 
+	void Delete_character(Person* house)
+	{	
+		int num=0;
+		cout << "Choose ID to delete\n ";
+		print_house(house);
+		cin>>num;
+		// for (int i = 0; i <10; i++)
+		// {
+		// 	if(house[i].get_ID()==num)
+		// 	{
+				house[num].set_ID(-1);
+				house[num].set_Job(Job());
+				 house[num].set_needs(Needs());
+				cout << "The character has been deleted\n ";
+		// 		break;
+		// 	}
+		// }
+		//cout<<"there is no such ID\n";
+	}
+
+
+
+	void Action(Person* house)
+	{
+		int num=0;
+		cout << "Choose Caracter ID\n";
+		print_house(house);
+		cin>>num;
+		for (int i = 0; i < 10; i++)
+		{
+			if (house[i].get_ID()==num)
+			{
+				int choice = 0;
+				cout << "Choose action\n"
+					<<"1-toilet\n"
+					<<"2-eat\n"
+					<<"3-talk\n"
+					<<"4-fun\n"
+					<<"5-sleep\n"
+					<<"6-shower\n";
+					cin>>choice;
+					switch (choice)
+					{
+					case 1:
+						
+						cout << "The character use the toilet\n ";
+						house[num].set_p_Bladder();			
+						break;
+					case 2:
+						house[num].set_P_Hunger();
+						break;
+					case 3:
+						house[num].set_P_Social();
+						break;
+					case 4:
+						house[num].set_P_Fun();
+						break;
+					case 5:
+						house[num].set_P_Energy();
+						break;
+					case 6:
+						house[num].set_p_Hygiene();
+						break;
+					default:
+						break;
+					}
+					
+					
+					
+				
+			}
+			
+			cout<<"not exist\n";
+		}
+		
+	}
