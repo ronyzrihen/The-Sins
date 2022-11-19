@@ -21,6 +21,7 @@ int main() {
 	cout <<"1 - Create a character\n"
 		<< "2 - Delete a charecter\n"
 		<< "3 - Action\n"
+		<< "4 - print house members\n"
 		<< "0 - Exit\n\n"
 		<< "choose: ";
 	cin >> choice;
