@@ -174,14 +174,9 @@ void create_character(Person* house) {
 						break;
 					default:
 						break;
-					}
-					
-					
-					
-				
+					}	
 			}
-			
-			cout<<"not exist\n";
 		}
+			
 		
 	}
