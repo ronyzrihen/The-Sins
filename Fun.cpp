@@ -1,29 +1,39 @@
 #include "Fun.h"
+#include "Animal.h"
+#include <cstdio>
 
-/*void Fun::dance() {
-	if (F_level + 5 > 10) {
-		F_level = 10;
-		return;
-	}
-	F_level += 5;
-}*/
 
-void Fun::petanimal(Animal animal) {
 
+void Fun::petanimal(Animal& animal) {
+int choice  = 0;
+	action(F_level);
 	cout << "PET PET PET!\n";
+
+	cout << "Feed "  << animal.get_name() << "?\n"
+		 << "1 - Yes               2 - NO" << endl;
+	cin >> choice;
+	if( choice == 1)
+		animal.eat();
+
+	
 
 }
 
- void Fun::set_Fun(int num=-1) {
+ void Fun::set_Fun(int num) {
 
 	 if (F_level + num <= 3) {
-		 cout << "I need to fun!\n";
-		 cout << "your Fun level is: " << F_level;
+		 cout << "The Fun level is: " << F_level << endl;
+		 cout << "I need to have fun!\n";
 	 }
 	 if (F_level + num <= 0) {
 		 F_level = 0;
 		 return;
 	 }
+	 if(F_level + num >= 10 ){
+		F_level = 10;
+		return;
+	 }
+	 	
 	 F_level += num;
-	 cout<<"the Fun level is:"<<F_level<<endl;
+	 cout<<"The Fun level is:"<<F_level<<endl;
  }

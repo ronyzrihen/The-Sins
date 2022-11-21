@@ -69,6 +69,7 @@ Job::Job(char* title_t)
 		
 		if(flag == 0){
 			 cout << "not exist\n" ;
+			 
 		}
 
 	
@@ -90,7 +91,7 @@ void Job::gotowork() {
 
 void Job::set_title(char* New_name) {
 	delete[] title;
-	title = new char;
+	title = new char[sizeof(strlen(New_name)+1)];
 	if (title == NULL) {
 		cout << "Error";
 		return;
@@ -98,4 +99,10 @@ void Job::set_title(char* New_name) {
 	strcpy(title, New_name);
 
 
+}
+
+void Job::reset(){
+	delete[] title;
+	salary = 0;
+	dailyworkhours = 0;
 }

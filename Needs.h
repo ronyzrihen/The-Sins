@@ -7,6 +7,7 @@
 #include "Social.hpp"
 #include "Hygiene.h"
 
+class Person;
 class Social;
 class Needs
 {
@@ -14,16 +15,20 @@ public:
 	Needs();
 	~Needs();
 
-	int get_Bladder();
-	int get_Hunger();
-	int get_Energy();
-	int get_Social();
-	void set_Bladder();
-	void set_Hunger();
-	void set_Social();
-	void set_Energy();
-	void set_fun();
-	void set_Hygiene();
+	int get_Bladder() { return N_bladder.get_Blevel(); };
+	int get_Hunger()  { return N_hunger.get_Hlevel(); };
+	int get_Energy()  {return N_energy.get_Elevel(); };
+	int get_Social()  { return N_social.get_social(); };
+	int get_Hygiene() { return N_hygiene.get_Hygiene(); };
+	int get_Fun() 	  {return N_fun.get_fun();};
+
+	void reset_needs();
+	void select_Bladder();
+	void select_Hunger();
+	void select_Social(Person& person, int num);
+	void select_Energy();
+	void select_fun();
+	void select_Hygiene();
 
 
 
@@ -36,5 +41,6 @@ private:
 	Hygiene N_hygiene;
 	
 };
+
 
 

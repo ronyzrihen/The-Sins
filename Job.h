@@ -13,9 +13,10 @@ public:
 	void set_title(char* New_name);
 	void set_salary(int New_salary) { salary = New_salary; };
 	void set_work_hours(int NEW_hours) { dailyworkhours = NEW_hours; };
+	void reset();
+
 	void gotowork();
-	
-	char* get_Name() const { return title; };
+	char* get_Name()  { return title; };
 	int get_Salary() { return salary; };
 	int get_Hours() { return dailyworkhours; };
 

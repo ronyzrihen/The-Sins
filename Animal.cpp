@@ -1,4 +1,6 @@
 #include "Animal.h"
+
+
 Animal::Animal() {
 
 	A_name = NULL;

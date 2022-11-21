@@ -28,12 +28,16 @@ void Hunger::eat() {
 
 	 if (H_level + num <= 3) {
 		 cout << "I need to eat!\n";
-		 cout << "your Hunger is: " << H_level;
+		 cout << "your Hunger is: " << H_level << endl;
 	 }
 	 if (H_level + num <= 0) {
 		 H_level = 0;
 		 return;
 	 }
+	 if(H_level + num >= 10){
+		 H_level = 10;
+		 return;
+	 }
 	 H_level += num;
-	 cout<<"the hunger level is:"<<H_level<<endl;
+	 cout<<"the hunger level is: "<<H_level<<endl;
  }

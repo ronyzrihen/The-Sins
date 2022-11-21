@@ -4,9 +4,11 @@
 inline void action(int level) {
 		if (level + 5 > 10) { 
 		level = 10;
+		std ::cout << "The Fun level is: " << level << endl;
 		return;
 	}
 	level += 5;
+	std ::cout << "The Fun level is: " << level << endl;
 }
 class Fun
 {
@@ -16,7 +18,9 @@ public:
 	void dance()		{ action(F_level); };
 	void playguitar()	{ action(F_level); };
 	void playcomputer() { action(F_level); };
-	void petanimal(	Animal animal);
+	void petanimal(	Animal& animal);
+
+	int get_fun() 		{return F_level; };
 	void set_Fun(int num);
 
 private:
