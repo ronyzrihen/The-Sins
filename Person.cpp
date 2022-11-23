@@ -83,41 +83,41 @@ void Person ::print_needs() {
   cout << endl << P_FirstName << ":\n";
   cout << "Bladder level is: " << P_needs.get_Bladder() << endl;
   if (P_needs.get_Bladder() <= 3)
-    cout << " || needs to use the toilet! ||\n"
-         << "===================\n";
-  ;
+    cout << " || needs to use the toilet! ||\n";
+         
+	cout << "===================\n";
+  
 
   cout << "Energy level is: " << P_needs.get_Energy() << endl;
   if (P_needs.get_Energy() <= 3)
-    cout << " || needs to sleep! ||\n"
-         << "===================\n";
-  ;
+    cout << " || needs to sleep! ||\n";
+
+	cout << "===================\n";
+  
 
   cout << "Hunger level is: " << P_needs.get_Hunger() << endl;
   if (P_needs.get_Hunger() <= 3)
-    cout << " || needs to eat! ||\n"
-         << "===================\n";
-  ;
-
+    cout << " || needs to eat! ||\n";
+         
+  
+	cout << "===================\n";
   cout << "Social level is: " << P_needs.get_Social() << endl;
   if (P_needs.get_Social() <= 3)
-    cout << " || needs to socialize! ||\n"
-         << "===================\n";
-  ;
-
-  cout << "Fun level is: " << P_needs.get_Fun() << endl
-       << "===================\n";
-
+    cout << " || needs to socialize! ||\n";
+        
+  	
+	
+  cout << "Fun level is: " << P_needs.get_Fun() << endl;
+    
+	cout << "===================\n";
   if (P_needs.get_Fun() <= 3)
-    cout << " || needs to have fun! ||\n"
-         << "===================\n";
-  ;
-
+    cout << " || needs to have fun! ||\n";
+         
+	
   cout << "Hygiene level is: " << P_needs.get_Hygiene() << endl;
   if (P_needs.get_Hygiene() <= 3)
-    cout << " || needs to use the shower! ||\n"
-         << "===================\n";
-  ;
+    cout << " || needs to use the shower! ||\n";
+  	cout << "===================\n";
 }
 
 void Print_house(int id, Person *house) {
