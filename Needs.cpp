@@ -129,4 +129,16 @@ void Needs::reset_needs() {
   N_hunger.set_Hunger(10);
   N_social.set_Slevel(10);
   N_fun.set_Fun(10);
+  N_hygiene.set_Hygiene(10);
+}
+
+void Needs::decrese_needs(){
+
+  N_bladder.set_Blevel(-1);
+  N_energy.set_Elevel(-1);
+  N_hunger.set_Hunger(-1);
+  N_social.set_Slevel(-1);
+  N_fun.set_Fun(-1);
+  N_hygiene.set_Hygiene(-1);
+  
 }

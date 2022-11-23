@@ -20,6 +20,7 @@ public:
 	
 
 	int need_check(); 
+	void print_needs();
 	void set_money(int salary) 	{ P_money += salary; };
 	void set_ID(int num) 		{ ID = num; };
 	void set_Job(Job& job);
@@ -32,6 +33,7 @@ public:
 	void set_P_Fun(){P_needs.select_fun();};
 	void set_P_Energy(){P_needs.select_Energy();};
 	void set_p_Hygiene(){P_needs.select_Hygiene();};
+	void set_decrese_needs() {P_needs.decrese_needs();};
 
 	void reset_job() {P_job.reset();};
 
@@ -45,4 +47,7 @@ public:
 	Job P_job;
 
 };
+
+void Print_house(Person *house);
+int member_exist(Person *house, int num);
 

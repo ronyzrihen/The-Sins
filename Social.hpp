@@ -23,6 +23,5 @@ public:
 private:
   int S_level;
 };
-void Print_house(Person *house);
-int member_exist(Person *house, int num);
+
 

@@ -22,6 +22,7 @@ public:
 	int get_Hygiene() { return N_hygiene.get_Hygiene(); };
 	int get_Fun() 	  {return N_fun.get_fun();};
 
+	void decrese_needs();
 	void reset_needs();
 	void select_Bladder();
 	void select_Hunger();

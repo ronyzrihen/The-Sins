@@ -29,28 +29,35 @@ int main() {
          << "0 - Exit\n\n"
          << "choose: ";
     cin >> choice;
-    if (choice < 0 || choice > 4) {
-      cout << "Not An Option\n";
-      continue;
+    while (choice < 0 || choice > 4) {
+      cout << "Not An Option\n"
+	  	   << "Try again: ";
+		cin >> choice;
     }
 
     switch (choice) {
     case 1: {
       create_character(house);
+      cout << endl << endl;
 
       break;
     }
     case 2: {
       int num = 0;
 
-      cout << "Choose ID to delete\n ";
+      cout << "Choose ID to delete:\n ";
+	  print_house(house);
       if (Is_empty(house) == 0) {
-        cout << "House is empty\n";
+        cout << "House is empty\n\n";
+
+        cout << endl << endl;
         break;
       }
       cin >> num;
-      if (member_exist(house, num)) {
+      if (member_exist(house, num) != -1) {
         Delete_character(house[num]);
+
+        cout << endl << endl;
         break;
       }
       cout << "\nInvalid number!\n";
@@ -58,11 +65,12 @@ int main() {
     }
     case 3: {
       Action(house);
-
+      cout << endl << endl;
       break;
     }
     case 4: {
       print_house(house);
+      cout << endl << endl;
       break;
     }
     case 0: {
@@ -94,18 +102,20 @@ void create_character(Person *house) {
     house[i].set_Lname(last_name);
 
     cout << "Job options:\n";
+	cout << "####| JOB         | Salary | Work Hours |\n";
     for (int j = 0; j < 6; j++) {
-      cout << j << " - " << jobs[j].get_Name() << endl
-           << "   Salary - " << jobs[j].get_Salary() << endl
-           << "   Work Hours - " << jobs[j].get_Hours() << endl
+
+      cout <<"----------------------------------------\n"
+	       << j << ".  | " << jobs[j].get_Name() << " | "
+           << jobs[j].get_Salary()<< "$ |"
+           <<  jobs[j].get_Hours() << " Hours |"
            << endl;
-      // cout << jobs[5].get_Name() << "\n\n";
     }
     cout << "Choose Job: ";
     cin >> choice;
     while (choice < 0 || choice > 5) {
       cout << choice << " Is Not An Option\n"
-	  	   <<"Try again: ";
+           << "Try again: ";
 
       cin >> choice;
     }
@@ -118,11 +128,13 @@ void create_character(Person *house) {
 
 void print_house(Person *house) {
   int flag = 0;
+      cout << "ID |"  << "\n";
   for (int i = 0; i < 10; i++) {
     if (house[i].get_ID() != -1) {
-      cout << "ID:" << house[i].get_ID() << "\n"
-           << " - " << house[i].get_Fname() << " " << house[i].get_Lname()
-           << " - " << house[i].get_job() << endl;
+	  	   cout<< "---------------------------------\n"
+           << house[i].get_ID() << ". |"
+		   << "  " << house[i].get_Fname() << " " << house[i].get_Lname()
+           << "  || " << house[i].get_job() << endl;
       flag = 1;
     }
   }
@@ -158,82 +170,99 @@ void Action(Person *house) {
     return;
 
   cin >> num;
-  for (int i = 0; i < 10; i++) {
-    if (house[i].get_ID() == num) {
-      int choice = 0;
-      cout << "Choose action\n"
-           << "1 - toilet\n"
-           << "2 - eat\n"
-           << "3 - talk\n"
-           << "4 - fun\n"
-           << "5 - sleep\n"
-           << "6 - shower\n";
-      cin >> choice;
-      switch (choice) {
-      case 1:
+  if (member_exist(house, num) == -1){
+	  cout << "No such character!\n";
+	  return;
+  }
 
-        cout << "The character use the toilet\n ";
-        house[num].set_p_Bladder();
-        if (house[num].need_check())
-          Delete_character(house[num]);
-        break;
-      case 2:
-        house[num].set_P_Hunger();
-        if (house[num].need_check())
-          Delete_character(house[num]);
-        break;
-      case 3: {
+    int choice = 0;
+  cout << "Choose action\n"
+       << "1 - toilet\n"
+       << "2 - eat\n"
+       << "3 - talk\n"
+       << "4 - fun\n"
+       << "5 - sleep\n"
+       << "6 - shower\n";
+  cin >> choice;
+  switch (choice) {
+  case 1:
 
-        int memID;
-        int act = 0;
+    cout << house[num].get_Fname() << " is using the tpilet\n ";
+    house[num].set_p_Bladder();
+    if (house[num].need_check())
+      Delete_character(house[num]);
+    break;
+  case 2:
+  
+    house[num].set_P_Hunger();
+    if (house[num].need_check())
+      Delete_character(house[num]);
+    break;
+  case 3: {
 
-        cout << "choose:\n"
-             << "1-talk\n"
-             << "2-text\n"
-             << "3-phonecall\n";
-        cin >> act;
-        if (act < 1 || act > 3) {
-          cout << act << " Is Not An Option\n";
-          break;
-        }
-        cout << "Choose member ID\n";
-        print_house(house);
-        cin >> memID;
-        if (member_exist(house, memID) == -1) {
-          cout << "ID " << memID << " Dosen't Exist\n";
-          break;
-        }
+    int memID;
+    int act = 0;
 
-        while (member_exist(house, memID) == -1) {
-          cout << "Member dosn't exist\n"
-               << "Choose again: ";
-          cin >> memID;
-        }
+    cout << "choose:\n"
+         << "1-talk\n"
+         << "2-text\n"
+         << "3-phonecall\n";
+    cin >> act;
+    if (act < 1 || act > 3) {
+      cout << act << " Is Not An Option\n";
+      break;
+    }
+    cout << "Choose member ID: \n";
+    print_house(house);
+    cin >> memID;
+    if (member_exist(house, memID) == -1) {
+      cout << "ID " << memID << " Dosen't Exist\n";
+      break;
+    }
 
-        house[num].set_P_Social(house[memID], act);
-        if (house[num].need_check())
-          Delete_character(house[num]);
+    while (member_exist(house, memID) == -1) {
+      cout << "Member dosn't exist\n"
+           << "Choose again: ";
+      cin >> memID;
+    }
 
-        break;
-      }
-      case 4:
-        house[num].set_P_Fun();
-        if (house[num].need_check())
-          Delete_character(house[num]);
-        break;
-      case 5:
-        house[num].set_P_Energy();
-        if (house[num].need_check())
-          Delete_character(house[num]);
-        break;
-      case 6:
-        house[num].set_p_Hygiene();
-        if (house[num].need_check())
-          Delete_character(house[num]);
-        break;
-      default:
-        break;
+    house[num].set_P_Social(house[memID], act);
+    if (house[num].need_check())
+      Delete_character(house[num]);
+
+    break;
+  }
+  case 4:
+    house[num].set_P_Fun();
+    if (house[num].need_check())
+      Delete_character(house[num]);
+    break;
+  case 5:
+    house[num].set_P_Energy();
+    if (house[num].need_check())
+      Delete_character(house[num]);
+    break;
+  case 6:
+    house[num].set_p_Hygiene();
+    if (house[num].need_check())
+      Delete_character(house[num]);
+    break;
+  default:
+    break;
+  }
+
+for (int i; i < 10; i++) {
+
+  if (house[i].get_ID() != -1) {
+    if (house[i].get_ID() != num) {
+
+      house[i].set_decrese_needs();
+      if (house[i].need_check()) {
+        Delete_character(house[i]);
       }
     }
+    if(house[i].get_ID() != -1) 
+		house[i].print_needs();
   }
+}
 }

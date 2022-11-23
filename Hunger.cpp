@@ -18,7 +18,7 @@ void Hunger::eat() {
 	
 	 if (H_level + fridge[choice].get_worth() > 10) {
 		 H_level = 10;
-		 cout<<"the hunger level is:"<<H_level<<endl;
+		 
 		 return;
 	 }
 	 H_level += fridge[choice].get_worth();
@@ -27,8 +27,8 @@ void Hunger::eat() {
  void Hunger::set_Hunger(int num) {
 
 	 if (H_level + num <= 3) {
-		 cout << "I need to eat!\n";
-		 cout << "your Hunger is: " << H_level << endl;
+		 
+		 
 	 }
 	 if (H_level + num <= 0) {
 		 H_level = 0;
@@ -39,5 +39,5 @@ void Hunger::eat() {
 		 return;
 	 }
 	 H_level += num;
-	 cout<<"the hunger level is: "<<H_level<<endl;
+	 
  }
