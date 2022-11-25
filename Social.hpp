@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-inline void set_score(int level) {
+inline void set_score(int& level) {
 		if (level + 5 > 10) { 
 		level = 10;
 		return;

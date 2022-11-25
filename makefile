@@ -4,9 +4,9 @@ OBJS = main.o Energy.o Bladder.o Animal.o Food.o Fun.o Hunger.o Person.o Hygiene
 all: sims
 
 sims: $(OBJS)
-	$(pp) $(OBJS) -o a.out
-	./a.out
-	rm *.o
+	$(pp) $(OBJS) -o sims.exe
+	./sims.exe
+	del *.o
 
 main.o: main.cpp 
 	$(pp) -c main.cpp
@@ -45,4 +45,4 @@ Food.o: Food.cpp Food.h
 	$(pp) -c Food.cpp
 
 clean:
-	rm  *.o 
+	del  *.o 

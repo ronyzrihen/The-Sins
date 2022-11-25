@@ -1,3 +1,8 @@
+/*
+Ofek Eliyahu - 207753120
+Rony Zrihen - 318917549
+*/
+
 #include "Person.hpp"
 #include "Social.hpp"
 using namespace std;
@@ -13,8 +18,6 @@ void Action(Person *house);
 int Is_empty(Person *house);
 
 int main() {
-
-  // cout << "here!";
 
   Person house[10];
   int house_size = 0;
@@ -251,7 +254,7 @@ void Action(Person *house) {
     break;
   }
 
-for (int i; i < 10; i++) {
+for (int i = 0; i < 10; i++) {
 
   if (house[i].get_ID() != -1) {
     if (house[i].get_ID() != num) {

@@ -50,7 +50,7 @@ void Person::set_Lname(char *name) {
 
 int Person::need_check() {
 
-  int sum;
+  int sum=0;
 
   if (P_needs.get_Bladder() == 0)
     sum++;
@@ -105,7 +105,7 @@ void Person ::print_needs() {
   if (P_needs.get_Social() <= 3)
     cout << " || needs to socialize! ||\n";
         
-  	
+  	cout << "===================\n";
 	
   cout << "Fun level is: " << P_needs.get_Fun() << endl;
     
